@@ -1,11 +1,2 @@
-image: ruby:2.7
-
-pages:
-    script:
-      - gem install bundler
-      - bundle install
-      - bundle exec jekyll build -d public
-  artifacts:
-    paths:
-      - public
-
+# The Docker image that will be used to build your app
+image: "image: ruby:2.7"
