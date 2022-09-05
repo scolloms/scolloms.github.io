@@ -76,6 +76,9 @@ a {color: inherit;text-decoration: underline;transition: color 0.25s ease;}
 
 #main {display: flex;position: relative;max-width: 100%;z-index: 1;align-items: center;justify-content: center;flex-grow: 0;flex-shrink: 0;text-align: left;transition: opacity 1s ease 0s,transform 1s ease 0s;}
 
+#photography-section {
+}
+
 #main > .inner {position: relative;z-index: 1;border-radius: inherit;padding: 5rem 4rem;max-width: 100%;width: 48rem;}
 
 #main > .inner > header {margin-bottom: 1.375rem;}
@@ -309,7 +312,7 @@ h1 .li, h2 .li, h3 .li, p .li {display: list-item;padding-left: 0.5em;margin: 0.
 
 .icons {cursor: default;padding: 0;letter-spacing: 0;}
 
-.icons li {display: inline-block;vertical-align: middle;position: relative;z-index: 1;}
+.icons li {display: inline-block;vertical-align: middle;position: relative;z-index: 1; font-size: 0.875em;font-family: 'Source Code Pro', monospace;font-weight: 800;}
 
 .icons li a {display: flex;align-items: center;justify-content: center;}
 
@@ -317,7 +320,6 @@ h1 .li, h2 .li, h3 .li, p .li {display: list-item;padding-left: 0.5em;margin: 0.
 
 .icons li a + svg {display: block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;pointer-events: none;}
 
-.icons li a .label {display: none;}
 
 #icons01 {font-size: 1.5em;width: calc(100% + 1.375rem);margin-left: -0.6875rem;}
 
@@ -423,6 +425,15 @@ h1 .li, h2 .li, h3 .li, p .li {display: list-item;padding-left: 0.5em;margin: 0.
 #main > .inner > footer > .full:last-child {margin-bottom: -2.625rem !important;}
 
 #main > .inner > .active > .full:first-child {margin-top: -2.625rem !important;}
+
+#sect00 iframe {
+    position: relative; top: 0; left: 0; max-width: 1000%!important; height: 100%;
+}
+
+#sect00 {
+    width:1000px;
+    height:1000px;
+}
 </style>
 
 <noscript>
@@ -448,7 +459,7 @@ body {overflow: auto !important;}body:after {display: none !important;}#main > .
 <img src="https://64.media.tumblr.com/f480d29cf5ce58e260f191edec79a771/1e6d315450dae422-63/s2048x3072/e815e1993f921ea2fb75215e444ebc3fa2af8726.jpg" alt="the silhouette of storm from the shoulders up against the milky way on a long exposure shot" /></span>
 </div>
 <h1 id="text03">Storm Colloms</h1>
-<h3 id="text_pronouns">they/them</h3>
+<h3 id="text_pronouns">they/them</h3> 
 <p id="text04">
 <span>Welcome! I&#39;m Storm, a first year PhD student at the Institute for Gravitational Research at the University of Glasgow, working on gravitational wave astrophysics. In particular my work focuses on using gravitational wave data to understand the origins of the population of stellar mass black holes and neutron stars.</span>
 <br /> <br /> 
@@ -459,6 +470,7 @@ body {overflow: auto !important;}body:after {display: none !important;}#main > .
 
 <ul id="buttons02" class="buttons">
 <li><a href="#research" class="button n01">Research</a></li>
+<li><a href="#photography" class="button n00">Photography</a></li>
 <li><a href="https://www2.ph.ed.ac.uk/~s1709423/CV.pdf" class="button n02">CV</a></li>
 <li><a href="#contact" class="button n03">Contact</a></li></ul>
 
@@ -487,6 +499,22 @@ body {overflow: auto !important;}body:after {display: none !important;}#main > .
 <li><a href="#home" class="button n01">Back</a></li></ul>
 </section>
 
+<section id="photography-section">
+
+<ul id="buttons03" class="buttons">
+<li><a href="#home" class="button n01">Back</a></li></ul> 
+
+<h2 id="text01">Photography</h2>
+<div id="sect00">
+<div style="position:relative;max-width:1200px!important;min-width:100px;height:1000px!important;"><iframe style="top: 0; left: -1000px; width: 200%!important; height: 200%!important;" src="https://flickrembed.com/cms_embed.php?source=flickr&layout=responsive&input=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Fstormcolloms%2F&sort=0&by=user&theme=slider&scale=fit&speed=15000&limit=50&skin=default&autoplay=false" scrolling="no" frameborder="0" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe><script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script></div>
+
+<iframe style="width:1000px!important; height:1000px;" src="https://flickrembed.com/cms_embed.php?source=flickr&layout=fixed&input=www.flickr.com/photos/stormcolloms/&sort=1&by=user&width=10000px!important&height=1000px&theme=slider&scale=fit&speed=3000&limit=50&skin=alexis&autoplay=false" scrolling="no" frameborder="10" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+
+<script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script>
+    
+</div>
+</section>
+
 <section id="contact-section">
 
 <ul id="buttons03" class="buttons">
@@ -497,11 +525,13 @@ body {overflow: auto !important;}body:after {display: none !important;}#main > .
 
 <a href="mailto:stormcolloms@gmail.com">
 <span class="__cf_email__" data-cfemail="7407001b0619171b18181b1907341319151d185a171b19">stormcolloms@gmail.com</span></a>
+<ul id="icons01" class="icons">
+<li><a class="n01" href="https://twitter.com/chirpmass"><svg><use xlink:href="#icon-905"></use></svg></a>
+</li></ul>
 </p>
 
-<ul id="icons01" class="icons">
-<li><a class="n01" href="https://twitter.com/chirpmass"><svg><use xlink:href="#icon-905"></use></svg><span class="label">Twitter</span></a>
-</li></ul>
+<div class='image'>
+<img src='https://lh3.googleusercontent.com/W4vyVbVjIG8IBHHs7Gz5gP42exTsegS8WVOGYMgwmb2fSnZCrHWrtKnhd0Mbt85ySksWi0z-yoxh_ruR1tP-QuwZTqo4WNu1FstX2c-MIcqoA5XzH04Wgs9aBHTF6QAZaeJJ4E2G6ZlXIOw7Ub2kvqErmrPQjU3PnUUYVHD85SE8FDskmJ58n4WytoQM6bPsxWKynJY1Cj7rLs2Vr7JTk6aR3iopvcgVHGfWPtVFcHYv3yT9sV1-3xaYGgAHuvlZbNB6EWe8SYSOpjGFZyJwFLdTyVxkrKexFoT9YfIBziNAvRN9628_p-rouLVPBnAnJOwzWHCQ4BuyuHd7WeF0lLu69fknHz4jVn3rV9VS2UnljJs2yS0WO-ebBJNm2sJfJun3yIMvWabrThiOjIxBp_cipEwxftaFg-V1irl7aP0RbMxQdkW1GRlTOMArak0GlZz_AVo_puzFow-EJ8QZn8uuVAaxpCIwR2rorvpCXRQ1ms5pqJj6KR4kPsmUiU6RDpffgjIlVZ5D7nDXVwv8mJ4wRGGWMcWmfyVYQu3aF7jbQudtyfXWML7qtMwTyU2efGSaa_QJCr9CAWCZ3LdXXpcBnpci-KHiMffvCvi0SeKXkf3C8fgucFxNuB52KTJXMS6uF9Yu7B8mk4T-DVUtLKuZs0Y6FCVNgklFahMyiZqGMCmL_37BKJETCXfFZsaE20p41CPOaM05dEhKUuOWKIRF5or3Vj5nPc-NJUrpmYsvOgwExnp63h6E132p=w1076-h879-no?authuser=0' width="35%"/></div>
 </section>
 
 <footer id="footer">
