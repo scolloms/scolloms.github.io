@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>qvar
+</title>
+<meta charset="utf-8">
+<style>
+body
+{
+	font: 10pt Cousine, monospace;
+	margin: 2em;
+}
+
+h1
+{
+	font-size: 14pt;
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+tw-storydata
+{
+	display: block !important;
+}
+
+tw-passagedata
+{
+	display: block !important;
+	line-height: 200%;
+	margin-bottom: 2em;
+	white-space: pre-wrap;
+}
+
+tw-passagedata + tw-passagedata
+{
+	border-top: 1pt dashed black;
+	padding-top: 2em;
+}
+
+tw-passagedata:before
+{
+	content: attr(name);
+	display: block;
+	font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>qvar
+</h1>
+<tw-storydata name="qvar" startnode="10" creator="Twine" creator-version="2.3.16" ifid="17EAA958-6B70-484E-99AD-7FEA556457C1" zoom="1" format="SugarCube" format-version="2.36.1" options="" hidden=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	font-family:Helectevia;
+  	font-size:20px;
+  	color:#FFF8E7;
+  	background-color:#000;
+  	margin-left:0%;
+}
+
+#colorlink {
+  color:#a5acd8;
+}
+
+a {
+	color:#a5acd8;
+}
+#ui-bar {
+	border:none;
+  	background:#000;
+  	font-size:14px;
+}
+
+#menu-item-restart::before{
+	display:none;
+}
+#menu-item-restart::before{
+	border:none;
+}
+#menu-item-saves{
+	display:none;
+}
+
+#story-title {
+  display:none}
+
+#ui-bar-toggle, #ui-bar-toggle:hover {
+  border:none;
+  background:#000;
+  color:#FFF8E7;
+  font-size:25px!important;
+}
+
+#ui-bar-history [id|="history"]{
+  border:none;
+  background:#000;
+  color:#FFF8E7;
+  font-weight: 400;
+}
+
+#history-backward, #history-forward {
+  border:none;
+  background:#000;
+  color:#FFF8E7;
+}
+
+body.inside {
+	background-color: Beige;
+}
+
+
+#forest {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 95%;
+  background-position: right center;
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+  z-index:-99;
+	background-image: url('https://mymodernmet.com/wp/wp-content/uploads/2019/10/nasa-black-hole-visualization-1.gif');
+}
+iframe {
+width:100%;
+  height:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+}
+
+#passages {
+	position: relative;
+}
+
+img {
+max-width: 50%;
+ float:right;
+}
+
+#captionimg img {
+max-width: 100%!important;
+ float:none!important;
+  margin-top:0px!important;
+} 
+
+#MW{
+background-clip: text;
+  background-image: url('https://mymodernmet.com/wp/wp-content/uploads/2019/10/nasa-black-hole-visualization-1.gif');
+}
+
+#UDF{
+  background-image:url('https://cdn.spacetelescope.org/archives/images/wallpaper4/heic0611b.jpg');
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+  z-index:-99;
+}
+
+#UDF2{
+  background-image:url('https://cdn.spacetelescope.org/archives/images/wallpaper4/heic0611b.jpg');
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+  z-index:-99;
+  opacity: 0.3;
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">//postdisplay['fadeIn'] = function (taskName) {
+//	$('#passages').addClass('fadeIn');
+//	$('.fadeIn').hide().fadeIn(2000);
+    // change 10000 to whatever time you want, in milliseconds
+//};
+
+postdisplay['control-ui'] = function () {
+		UIBar.stow();
+};
+
+
+
+// <<fadein>> macro
+Macro.add('fadein', {
+       tags : null,
+    handler : function () {
+
+        var $wrapper = $(document.createElement('span'));
+        var content  = this.payload[0].contents, time, delay;
+
+        if (this.args.length === 0) {
+            return this.error('no arguments given');
+        }
+        
+        time  = Util.fromCssTime(this.args[0]);
+        delay = (this.args.length > 1) ?  Util.fromCssTime(this.args[1]) : 0;
+
+        $wrapper
+            .wiki(content)
+            .addClass('macro-' + this.name)
+            .appendTo(this.output)
+            .hide()
+            .delay(delay)
+            .fadeIn(time);
+
+    }
+});
+
+Macro.add('fadeout', {
+       tags : null,
+    handler : function () {
+
+        var $wrapper = $(document.createElement('span'));
+        var content  = this.payload[0].contents, time, delay;
+
+        if (this.args.length === 0) {
+            return this.error('no arguments given');
+        }
+        
+        time  = Util.fromCssTime(this.args[0]);
+        delay = (this.args.length > 1) ?  Util.fromCssTime(this.args[1]) : 0;
+
+        $wrapper
+            .wiki(content)
+            .addClass('macro-' + this.name)
+            .appendTo(this.output)
+            .delay(delay)
+            .fadeOut(time);
+
+    }
+});
+
+
+// continue.min.js, for SugarCube 2, by Chapel
+// v1.0.1, 2021-04-20, 53d1a20e9321b3782a303cf7dbe00f5c51e947db
+;!function(){"use strict";var n=["a",":button",'*[role="button"]',".continue-macro-ignore","#ui-bar","#ui-dialog"],t=0;function o(){$(document).on("click.continue-macro keyup.continue-macro",n.join(", "),(function(n){n.stopPropagation()}))}function e(){if(State.length>0)return!1;var t=[].slice.call(arguments).flatten();return n=n.concat(t),!0}function c(n,o){var e=function(){var n="."+Date.now().toString(36)+"-"+t;return t++,n}();if(o&&"function"==typeof o){var c="click.continue-macro"+e;n&&(c=c+" keyup.continue-macro"+e),$(document).one(c,(function(){o.call(),$(document).off(e)}))}}prehistory["%%continue-expiration"]=function(){t=0},$(document).one(":passagerender",(function(){o()})),Macro.add("ignore",{handler:function(){if(!e(this.args))return this.error("the <<ignore>> macro should only be run from StoryInit or equivalent.")}}),Macro.add("cont",{tags:null,handler:function(){var n,t=this.args.includes("append"),o=this.args.includesAny("key","keypress","press","button"),e=this.payload[0].contents;t&&(n=$(document.createElement("span")).addClass("macro-"+this.name).appendTo(this.output)),c(o,this.createShadowWrapper((function(){t&&n&&n instanceof $?n.wiki(e):$.wiki(e)})))}}),setup.cont=c,setup.cont.ignore=e,setup.cont.reset=function(){var t=[].slice.call(arguments).flatten();n=n.concat(t),$(document).off(".continue-macro"),o()},window.cont=window.cont||setup.cont}();
+// end continue.min.js</script><tw-passagedata pid="1" name="Start &gt;" tags="" position="860,345" size="100,100">&lt;&lt;fadein 2s&gt;&gt;
+Outwith our galaxy, the &lt;&lt;linkappend "''Milky Way'',"&gt;&gt;
+&lt;&lt;fadein 2s 1s&gt;&gt; 
+[img[milkyway.jpg]]
+&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;fadein 2s 2s&gt;&gt;
+there are many ''other galaxies'', some like our own, some &lt;&lt;linkappend "''slightly different...''"&gt;&gt;
+
+&lt;&lt;fadein 2s&gt;&gt;
+''[[Look into the sky &gt;]]''
+&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;/linkappend&gt;&gt;
+
+&lt;&lt;/fadein&gt;&gt;
+
+&lt;&lt;/linkappend&gt;&gt;
+
+
+
+
+
+&lt;&lt;/fadein&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="2" name="Untitled Passage 1" tags="header" position="1166,516" size="100,100">{
+(print: "&lt;script&gt;$('html').removeClass(\)&lt;/script&gt;")
+(if: (passage:)'s tags's length &gt; 0)[
+(print: "&lt;script&gt;$('html').addClass('" + (passage:)'s tags.join(' ') + "'\)&lt;/script&gt;")
+]
+}</tw-passagedata><tw-passagedata pid="3" name="Look Closer &gt;" tags="" position="1035,667" size="100,100">&lt;&lt;fadein 2s&gt;&gt;
+[img[https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Messier_87_Hubble_WikiSky.jpg/800px-Messier_87_Hubble_WikiSky.jpg]]
+&lt;&lt;cacheaudio "bgm_space2" "ambient-space-texture.wav"&gt;&gt;&lt;&lt;audio "bgm_space2" volume 0 fadeoverto 5 0.75 loop&gt;&gt;&lt;&lt;audio "bgm_space" fadeout&gt;&gt;Somewhere very, very, very, far away... (50 million light years to be precise)
+
+There is a galaxy, named M87, which, like many others, have a distinct ''bright core'' originating from a ''compact region'' at the centre of the galaxy, spilling out light at many frequencies from X-ray to Radio.
+
+This shining region radiates as much light as up to several ''trillion'' stars, outshining all of the stars in the galaxy by a factor of ten.
+&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;fadein 2s 6s&gt;&gt;
+''[[Look Even Closer &gt;&gt;]]''
+&lt;&lt;/fadein&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Look Even Closer &gt;&gt;" tags="" position="860,645" size="100,100">&lt;&lt;audio "bgm_space2" fadeout&gt;&gt;
+&lt;iframe  src="https://www.youtube.com/embed/ghoUhPbzFiQ?&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="autoplay" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;&lt;timed 48s&gt;&gt;&lt;&lt;goto Next&gt;&gt;
+&lt;&lt;/timed&gt;&gt; 
+</tw-passagedata><tw-passagedata pid="5" name="Next" tags="forest" position="860,795" size="100,100">&lt;&lt;fadein 5s&gt;&gt;
+&lt;div id ="forest"&gt;&lt;/div&gt;
+&lt;&lt;audio "bgm_space" volume 0 fadein&gt;&gt;
+
+At the very centre of this galaxy, M87, there is a ''black hole''. This one, in particular, is a ''super-massive black hole''. It is more than a ''billion'' times the mass of our Sun, and the black hole's 'radius', known as its event horizon, stretches out more than a hundered times the distance from Earth to the Sun.
+
+From behind this event horizon not even light can escape, but this doesn't mean that objects around it are instantly gobbled up by the black hole. In fact, they orbit in what's called an ''accretion disk'', getting extremely hot, and glowing with that heat, before spiralling into the centre.
+
+Because the gravity in the surrounding area is so strong, the light emitted on the far side of our view gets curved around the black hole. The accretion disk behind the black hole appears above and below the event horizon, and gives this mystifying shape.
+
+''[[But we're not done yet]]&gt;&gt;''
+&lt;&lt;/fadein&gt;&gt;
+
+
+
+
+</tw-passagedata><tw-passagedata pid="6" name="Look into the sky &gt;" tags="" position="970,486" size="100,100">&lt;&lt;fadein 5s&gt;&gt;
+&lt;&lt;cacheaudio "bgm_space" "chords.wav"&gt;&gt;
+&lt;&lt;audio "bgm_space" volume 0 fadeoverto 5 0.75 loop&gt;&gt;
+&lt;div id ="UDF"&gt;&lt;/div&gt;
+&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;fadein 2s 6.5s&gt;&gt;
+''[[Look Closer &gt;]]''
+&lt;&lt;/fadein&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="But we're not done yet" tags="" position="860,945" size="100,100">&lt;&lt;set $count=0&gt;&gt;
+&lt;&lt;audio "bgm_space" fadeout&gt;&gt;
+&lt;&lt;cacheaudio "bgm_space3" "twinkle.wav"&gt;&gt;&lt;&lt;audio "bgm_space3" volume 0 fadeoverto 5 0.75 loop&gt;&gt;&lt;&lt;fadein 2s&gt;&gt;We have observed hundereds of thousands of these big bright black holes in the middle of galaxies across the universe,
+&gt;&gt;but we dont know exactly how they &lt;&lt;link "''work''"&gt;&gt;
+	&lt;&lt;if $count == 0&gt;&gt;
+		&lt;&lt;append "#questions"&gt;&gt;&gt;&gt;&lt;&lt;fadein 2s&gt;&gt;how do these black holes shine so ''bright''?&lt;&lt;/fadein&gt;&gt;&lt;&lt;/append&gt;&gt;
+		&lt;&lt;set $count=1&gt;&gt;
+		&lt;&lt;print $count&gt;&gt;
+	&lt;&lt;elseif $count == 1&gt;&gt;
+		&lt;&lt;append "#questions"&gt;&gt;&gt;&gt;&gt;&gt;&lt;&lt;fadein 2s&gt;&gt;how have they grown so ''massive''?&lt;&lt;/fadein&gt;&gt;&lt;&lt;/append&gt;&gt;
+		&lt;&lt;set $count=2&gt;&gt;
+	&lt;&lt;elseif $count == 2&gt;&gt;
+		&lt;&lt;append "#questions"&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&lt;&lt;fadein 2s&gt;&gt;how exactly are matter and light ''falling in''?&lt;&lt;/fadein&gt;&gt;&lt;&lt;/append&gt;&gt;
+		&lt;&lt;set $count=3&gt;&gt;
+	&lt;&lt;else&gt;&gt;
+	 &lt;&lt;goto "work"&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;span id="questions"&gt;&lt;/span&gt;
+
+&lt;&lt;/fadein&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageFooter" tags="PassageFooter" position="316,262" size="100,100"></tw-passagedata><tw-passagedata pid="9" name="StoryCaption" tags="StoryCaption" position="465,261" size="100,100">&lt;div id="captionimg"&gt;[img[doodle.png]]&lt;/div&gt;
+Glossary
+
+Galaxy - a group of billions of stars, gas and dust
+Milky way - Our home galaxy
+Light year - the distance that light can travel in a year
+Black hole - a point of infinite density which curves spacetime such that not even light can escape if it gets too close
+Event Horizon - the surface of a black hole beyond which not even light can escape
+
+
+this story is written by Storm Colloms for the University of Edinburgh 2021/22</tw-passagedata><tw-passagedata pid="10" name="Start Journey" tags="" position="847,203" size="100,100">&lt;&lt;fadein 2s&gt;&gt;
+This is a hypertext story about ''super massive black holes''.
+&lt;&lt;fadein 2s 2s&gt;&gt;
+&gt;Created by ''Storm Colloms'' 2022.
+&lt;&lt;fadein 2s 4s&gt;&gt;
+&gt;&gt;Click the &lt;span id='colorlink'&gt;''links''&lt;/span&gt; to progress, there is a glossary at the side.
+&lt;&lt;fadein 2s 6s&gt;&gt;
+&gt;&gt;&gt;This story also contains auditory elements, headphones are recommended.
+&lt;&lt;fadein 2s 8s&gt;&gt;
+''[[Start &gt;]]''
+
+&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;/fadein&gt;&gt;
+&lt;&lt;/fadein&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Credits" tags="" position="706,719" size="100,100">Text Written by Storm Colloms
+
+this image is from nasa https://svs.gsfc.nasa.gov/13326
+https://en.wikipedia.org/wiki/Messier_87
+https://eventhorizontelescope.org/science</tw-passagedata><tw-passagedata pid="12" name="work" tags="" position="860,1095" size="100,100">&lt;&lt;fadein 2s&gt;&gt;
+One mystery is their ''variability''; they flicker brighter and dimmer over time, but why don't know what ''causes'' this flickering.
+
+We can compare simple ''[[models]]'' of this variability to try and understand ''where'' it comes from, and how it changes between each of these super-massive black holes.
+&lt;&lt;/fadein&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="models" tags="" position="860,1245" size="100,100">&lt;&lt;fadein 2s&gt;&gt;
+The surroundings of this black hole may be like our sun, and have flares much like solar flares that we see when studying our own solar system.
+
+[img[flares1.gif]]
+
+Hopefully figuring out the ''[[mysteries]]'' behind this variability can tell us more about this extreme environment: is it gloopy? is it cloudy? is it blobby?
+
+[img[flares2.gif]]
+&lt;&lt;/fadein&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="mysteries" tags="" position="860,1395" size="100,100">&lt;&lt;fadein 2s&gt;&gt;
+&lt;div id='UDF2'&gt;&lt;/div&gt;
+Maybe one day this could be a small piece in finding out answers to the biggest questions of the universe... from the strong gravity around a black hole, to the roles they play within their galaxy, and, ultimately, the roles they have played, and have yet to play, in the history of our universe.
+
+&gt;&gt;''[[&gt;&gt; And so we strive]]''
+
+[img[doodle.png]]
+&lt;&lt;/fadein&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="&gt;&gt; And so we strive" tags="" position="860,1545" size="100,100">Thanks for playing! This has been a story about super-massive black holes, written by Storm Colloms. Presse restart in the menu to play again.
+
+Image credits
+[1] http://astrophoto.com/images.htm
+[2] https://cdn.spacetelescope.org/archives/images/wallpaper4/heic0611b.jpg
+[3] http://wikisky.org/snapshot?img_size=&amp;img_res=&amp;ra=12.5138&amp;de=12.3896&amp;angle=0.0293&amp;projection=tan&amp;rotation=0.0&amp;survey=astrophoto&amp;img_id=905632&amp;width=2160&amp;height=2160&amp;img_borders=&amp;interpolation=bicubic&amp;jpeg_quality=0.8
+[4] https://www.youtube.com/watch?v=ghoUhPbzFiQ
+[5] https://svs.gsfc.nasa.gov/13326
+[6] [7] https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=10109
+[8] [9] drawn by storm :-)
+
+Sound Credits
+[1] https://freesound.org/people/tim.kahn/sounds/149072/
+[2] https://freesound.org/people/Andrewkn/sounds/474864/
+[3] https://freesound.org/people/X3nus/sounds/477478/
+
+[img[doodle2.jpg]]</tw-passagedata></tw-storydata>
+
+
+
+
+</body></html>
