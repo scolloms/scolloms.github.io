@@ -340,7 +340,7 @@ h1 .li, h2 .li, h3 .li, p .li {display: list-item;padding-left: 0.5em;margin: 0.
 
 .icc-credits {display: block;position: relative;transition-delay: 0s !important;opacity: 1 !important;}
 
-.icc-credits span {border-radius: 24px;cursor: pointer;display: inline-block;font-family: Arial, sans-serif;font-size: 12px;letter-spacing: 0;line-height: 1;position: relative;text-decoration: none;width: auto;}
+.icc-credits span {border-radius: 24px;cursor: pointer;display: inline-block;font-family: Arial, sans-serif;font-size: 12px;letter-spacing: 0;line-height: 1;position: relative;text-decoration: none;width: auto; background-color: transparent!important;}
 
 .icc-credits span a {display: inline-block;padding: 0.5em 0.375em;position: relative;text-decoration: none;transition: color 0.25s ease, transform 0.25s ease;z-index: 1;}
 
@@ -437,6 +437,10 @@ h1 .li, h2 .li, h3 .li, p .li {display: list-item;padding-left: 0.5em;margin: 0.
     width:100%;
     height:100%;
 }
+
+#image_doppler img{
+  width: 20%; height: 100%; overflow: hidden; margin-left:-10%;
+}
 </style>
 
 <noscript>
@@ -465,21 +469,28 @@ body {overflow: auto !important;}body:after {display: none !important;}#main > .
 <h3 id="text_pronouns">they/them</h3> 
 <p id="text04">
 <span>
-  <embed src="paragraph_contents/test.txt">
-  Welcome! I&#39;m Storm, a second year PhD student at the Institute for Gravitational Research at the University of Glasgow, working on gravitational wave astrophysics. In particular my work focuses on using gravitational wave data to understand the origins of stellar mass black holes and neutron stars.</span>
-<br /> <br /> 
+Welcome! I&#39;m Storm, a second year PhD student at the Institute for Gravitational Research at the University of Glasgow, 
+working on gravitational wave astrophysics. In particular my work focuses on using gravitational wave data and machine learning techniques 
+to understand the origins of stellar mass black holes and how their progenitors evolved.
+  </span>
+  <br /> <br /> 
 
-<span>I am also very fond of photography, sci-fi, storytelling and cats. In between that, i spend my time thinking about the intersections between science and art,  what it means to be a person, and how to spend my time collaborating, creating, being inspired and inspiring! I try to mesh all of this in with DEI (diversity, equality and inclusion) and outreach efforts where I can, and am always on the lookout for people who I can help make academia a better place with.
+<span>
+I am also very fond of photography, sci-fi, storytelling and cats. In between that, i spend my time thinking about the intersections 
+between science and art and what it means to be a person. I try to help with with DEI (diversity, equality and inclusion) 
+and outreach efforts where I can, and am always on the lookout for people who I can help make academia a better place with.
 
 </span></p>
 
 <ul id="buttons02" class="buttons">
 <li><a href="#research" class="button n01">Research</a></li>
+<li><a href="#outreach" class="button n04">Outreach</a></li>
 <li><a href="#photography" class="button n00">Photography</a></li>
-<li><a href="../website/CV.pdf" class="button n02">CV</a></li>
+<li><a href="https://scolloms.github.io/CV.pdf" class="button n02">CV</a></li>
 <li><a href="#contact" class="button n03">Contact</a></li></ul>
 
-<div id="image03" class="image"><span class="frame"><img src="wizards2.png" alt="an illustration of 2 wizards walking along the horizon with a binary star system spilling flecks down to them." /></span></div>
+<div id="image03" class="image"><span class="frame"><img src="wizards2.png" 
+alt="an illustration of 2 wizards walking along the horizon with a binary star system spilling flecks down to them." /></span></div>
 
 </section>
 
@@ -490,24 +501,80 @@ body {overflow: auto !important;}body:after {display: none !important;}#main > .
 
 <h2 id="text05">Research</h2>
 
-<div id="image01" class="image"><img width="30%" src="cbc_illustration.png" alt="a line illustration of a binary black hole merger by storm. the black holes are spiralling into each-other while swirls and blankets and waves are tossed between and around them." /></div>
+<div id="image01" class="image"><img width="30%" src="cbc_illustration.png"
+  alt="a line illustration of a binary black hole merger by storm. the black holes are spiralling into each-other while swirls 
+  and blankets and waves are tossed between and around them." /></div>
 <p id="text06">
 
 <span><u>PhD - Inferring the origins of compact objects</u> <em>(University of Glasgow, October 2022 to Present)</em></span><br />
 
 <span>
-My research involves understanding the populations of compact objects remnants, neutron stars and black holes, comparing gravitational wave data to simulations of millions of these binaries to learn more about how they formed. Through seeing how changes in the input physics effect the resulting distribution of compact object mergers, these population synthesis simulations can help constrain the uncertainties of binary evolution. My work invovles using machine learning techniques to interpolate between population synthesis models and rapidly evaluate the outcomes of many simulated binary populations.
+My research involves understanding the population of compact objects, neutron stars and black holes, 
+comparing gravitational wave data to simulations of millions of these binaries to learn more about how they formed. 
+Through seeing how changes in the input physics effect the resulting parameters of compact object mergers, these 
+population synthesis simulations can help constrain the uncertainties of binary evolution. My work invovles using a type of machine learning called a normalising flow 
+to emulate population synthesis models and rapidly evaluate the outcomes of many simulated 
+binary populations.
 </span><br /><br />
 
 <span><u>Master&#39;s Project</u> <em>(University of Edinburgh)</em></span><br /> 
 
-<span>I worked on statistically analysing quasar variability, and modelling this variability as shot noise. I compared these models to data from observations of thousands of quasars, and found evidence for multiple timescales of variability present in quasar accretion disks. I made a public summary for my work in the form of a Twine-based hypertext story, which you can read <a href="https://scolloms.github.io/qvar.html">here!</a></span><br /> <br /> 
+<span>
+I worked on statistically analysing quasar variability, and modelling this variability as shot noise. 
+I compared these models to data from observations of thousands of quasars, and found evidence for multiple timescales of variability 
+present in quasar accretion disks. 
+I made a Twine-based hypertext story based on my project, which you can read <a href="https://scolloms.github.io/qvar.html">here!</a></span><br /> <br /> 
 
 <span><u>LIGO SURF 2021</u> <em>(Caltech)</em></span><br /> 
 
-<span>I worked on improving the search methods for finding gravitationally lensed gravitational waves. Gravitational lensing can create multiple images of gravitational waves, which can hide some of these signals behind the noisy data, and no credible lensed events have been found yet (correct as of 2021)! I imposed a condition to constrain the search to the sky location of a super-threshold event, as the images will come from approximately the same place in the sky. At the end of my project it still required some testing, but once that gets done and implemented this could mean a lot for finding sub-threshold GW signals! I wrote an astrobite on my work which you can read <a href="https://astrobites.org/2022/05/05/subthres-gw-lensing/">here!</a></span><br /> <br />
+<span>
+I worked on improving the search methods for finding gravitationally lensed gravitational waves. 
+Gravitational lensing can create multiple images of gravitational waves, which can hide some of 
+these signals behind the noisy data, but no credible lensed events have been found yet (correct as of 2023)! 
+I imposed a condition to constrain the search to the sky location of a super-threshold event, as the images 
+will come from approximately the same place in the sky. I wrote an astrobite on my work which you can read 
+<a href="https://astrobites.org/2022/05/05/subthres-gw-lensing/">here!</a></span><br /> <br />
 
-<span><u>Other</u><em> (University of Edinburgh, University of Tokyo)</em></span><br /> <span>I have also looked at exoplanet transits; identifying planetary mass objects via photometric analysis; and dynamical formation of planetary systems with tides using N-body code.</span></p></section><section id="about-section">
+<span><u>Other</u><em> (University of Edinburgh, University of Tokyo)</em></span><br /> 
+<span>
+I have also looked at exoplanet transits; identifying planetary mass objects via photometric analysis; 
+and dynamical formation of planetary systems with tides using N-body code.</span></p></section>
+
+<section id="about-section">
+
+<ul id="buttons04" class="buttons">
+<li><a href="#home" class="button n01">Back</a></li></ul>
+</section>
+
+<section id="outreach-section">
+
+  <h2 id="text05">Outreach</h2>
+
+<div id="image_doppler" class="image"><img width="90%" src="doppler.gif"
+  alt="An animation of a compact binary in blue orbiting a super massive black hole on the upper plot, and on the lower, 
+  a representation of the gravitational wave produced by the compact binary. The frequency and amplitude of the gravitational wave 
+  increase as the binary moves towards us and decrease as the binary moves away on either side of the orbit. " /></div>
+<p id="text06">
+
+  <span>I'm involved in a few outreach efforts and collaborations, some local, some global, some detailed below:</span>
+  <br /> <br />
+<span><u>Astrobites author and editor</u> <em>(January 2023 to Present)</em></span><br />
+<span> 
+Astrobites is a worldwide collaboration of graduate students that summarises recent puplications in astrophysics into bite-size articles, 
+written for an undergraduate level. You can check out the articles I've written recently 
+<a href="https://astrobites.org/author/scolloms/">here</a>.
+</span><br /> <br />
+<span><u>LIGO magazine illustartor</u> <em>(January 2023 to Present)</em></span><br />
+<span>
+LIGO Magazine is a biannual publication by the LIGO Scientific Collaboration which details the latest research, 
+news and fun events across the community. Since Issue 22 I have been an illustartor on the magazine editorial commitee. 
+You can find recent PDFs of the magazine <a href="https://www.ligo.org/magazine/">here</a>.
+</span><br /> <br />
+<span><u>Humans of LIGO curator</u> <em>(January 2023 to Present)</em></span><br />
+<span>
+Humans of LIGO is an initiative which celebrates individuals of the LIGO Scientific Collaboration, profiling a personal bio of 
+the diverse array of LIGO members and contributors. The blog is hosted <a href="https://humansofligo.blogspot.com//">here</a>.
+</span><br />
 
 <ul id="buttons04" class="buttons">
 <li><a href="#home" class="button n01">Back</a></li></ul>
@@ -590,8 +657,8 @@ My research involves understanding the populations of compact objects remnants, 
 <h2 id="text01">Contact</h2>
 <p id="text02">
 
-<a href="mailto:stormcolloms@gmail.com">
-<span class="__cf_email__" data-cfemail="7407001b0619171b18181b1907341319151d185a171b19">stormcolloms@gmail.com</span></a>
+<a href="mailto:s.colloms.1@research.gla.ac.uk">
+<span class="__cf_email__" data-cfemail="7407001b0619171b18181b1907341319151d185a171b19">s.colloms.1@research.gla.ac.uk</span></a>
 <ul id="icons01" class="icons">
 <li><a class="n01" href="https://twitter.com/chirpmass"><svg><use xlink:href="#icon-905"></use></svg></a>
 </li></ul>

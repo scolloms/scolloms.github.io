@@ -1,1 +1,3 @@
-testing
+Welcome! I&#39;m Storm, a second year PhD student at the Institute for Gravitational Research at the University of Glasgow, 
+working on gravitational wave astrophysics. In particular my work focuses on using gravitational wave data and machine learning techniques
+to understand the origins of stellar mass black holes and how their progenitors evolved.
